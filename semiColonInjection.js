@@ -1,5 +1,5 @@
 function returnsNothing(){
-  return                     //Automatic Semicolon (;) will be injected By syntax Parser.
+  return        //Automatic Semicolon (;) will be injected By syntax Parser.
   {
     key: 'value'
   }
