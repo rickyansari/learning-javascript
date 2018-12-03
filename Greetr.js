@@ -1,4 +1,5 @@
-(function (global, $) {
+// If the other library injected before this didn't put semicolon at the end 
+;(function (global, $) {
 
   var Greetr = function (firstName, lastName, language) {
     return new Greetr.init({ firstName, lastName, language })
@@ -61,6 +62,24 @@
       this.language = newlanguage;
       this.validate();      
       return this
+    },
+
+    HTMLGreeting: function(selector, formal){
+      if(!$){
+        throw new Error("jQuery not found");
+      }
+      if(!selector){
+        throw new Error('misssing jQuery Selector ')
+      }
+      var msg;
+      if(formal){
+        msg = this.formalGreetings()
+      }else{
+        msg = this.greeting()
+      }
+
+      $(selector).html(msg); 
+      return this;
     }
   };
 
@@ -69,6 +88,7 @@
     self.firstName = firstName;
     self.lastName = lastName;
     self.language = language;
+    this.validate();
     return self
   };
 
