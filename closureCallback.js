@@ -16,3 +16,6 @@ function tellMeWhenDone(callback){
 tellMeWhenDone(function(){console.log("I am Done")})
 
 tellMeWhenDone(function(){alert("I am Done")})
+
+
+// Have a look a currying.js
