@@ -23,5 +23,25 @@ function data() {
 }
 
 // old approach
-var tmp = data();
+var temp = data();
 var first = temp[0];
+
+(function gatherRest() {
+  const [first, ...rest] = data();
+  console.log(first, rest);
+})();
+
+(function retainReference() {
+  const [first] = (ref = data());
+  console.log(first, ref);
+})();
+
+(function destructingReturnOriginalObject() {
+  const original = ([first] = data());
+  console.log(original, first);
+})();
+
+//
+(function skippingVales() {
+  const [first, , last] = data();
+})();
