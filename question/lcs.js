@@ -32,6 +32,7 @@ console.log(
     sl2: string2.length - 1
   })
 );
+
 function LCS(S, n, T, m) {
   if (n === -1 || m === -1) return 0;
   let result;
