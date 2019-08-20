@@ -1,6 +1,6 @@
-const { useState: useState1 } = require('./hookReplica1');
-const { useState: useState2 } = require('./hookReplica2');
-const { MyReact } = require('./hookReplica3');
+const { useState: useState1 } = require('./hookReplica1'); // will work but not exact implementation.
+const { useState: useState2 } = require('./hookReplica2'); // won't work due to stale reference.
+const { MyReact } = require('./hookReplica3'); // 
 
 function Button(useState) {
   debugger;
@@ -20,14 +20,15 @@ function Counter() {
   }
 }
 
-// function hooks() {
-//   Button(useState1);
-//   Button(useState2);
+function hooks() {
+  Button(useState1);
+  Button(useState2);
+}
+hooks();
 
-// }
 let App
 App = MyReact.render(Counter) // render: { count: 0 }
 App.click()
 App = MyReact.render(Counter) // render: { count: 1 }
 
-// hooks();
+

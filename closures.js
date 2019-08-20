@@ -1,5 +1,5 @@
-function greet(whatToSay){
-  return function(name){
+function greet(whatToSay) {
+  return function (name) {
     console.log(`${whatToSay} : ${name}`)
   }
 }
@@ -7,18 +7,18 @@ function greet(whatToSay){
 greet('Hi')('ashfaq');
 
 var sayHi = greet('Hi');
-// function have access to the variable{whatToSay} of outer scope event it is invoked outside of the scope{execution context}
+// function have access to lexically scoped variable and function  when it is invoked outside of the scope{execution context}
 
 sayHi("Kranthi");
 
 
 
 
-function build(){
-  var arr= [];
-  for(var i=0; i<3; i++){
+function build() {
+  var arr = [];
+  for (var i = 0; i < 3; i++) {
     arr.push(
-      function(){
+      function () {
         console.log(i)
       }
     )
@@ -34,15 +34,15 @@ fs[2]();  //3
 
 
 // solution1 Old school By using IIFE 
-function build2(){
-  var arr= [];
-  for(var i=0; i<3; i++){
+function build2() {
+  var arr = [];
+  for (var i = 0; i < 3; i++) {
     arr.push(
-      (function(j){
-        return function(){
+      (function (j) {
+        return function () {
           console.log(j)
         }
-      }(i))  
+      }(i))
     )
   }
   return arr;
@@ -58,11 +58,11 @@ fs2[2]();  //3
 // ES6 solution By using let 
 
 
-function build3(){
+function build3() {
   var arr = [];
-  for(let i=0; i<3; i++){
+  for (let i = 0; i < 3; i++) {
     arr.push(
-      function(){
+      function () {
         console.log(i)
       }
     )
