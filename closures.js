@@ -72,6 +72,20 @@ function build3() {
 
 var fs3 = build3();
 
-fs3[0]();  //3
-fs3[1]();  //3
-fs3[2]();  //3
+fs3[0]();  //0
+fs3[1]();  //1
+fs3[2]();  //2
+
+
+// KYLE SIMPSON deep javascript //
+// closure is preservation of linkage of variable not value
+
+var teacher = "kyle";
+
+var myTeacher = function () {
+  console.log(teacher)
+}
+
+teacher = "Simpson"
+
+myTeacher()

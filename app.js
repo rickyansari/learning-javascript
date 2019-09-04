@@ -12,9 +12,10 @@ g.setLanguage('es');
 
 g.greet().log();
 
-$('#login').click(function(){
-  var loginGreetr = G$('ashfaq', 'ansari', 'en'); 
+$('#login').click(function () {
+  var loginGreetr = G$('ashfaq', 'ansari', 'en');
   // hide login from the screen
   $('#logindiv').hide();
-  loginGreetr.setLanguage($('#language').val( )).HTMLGreeting('#greeting', true).log()
+  loginGreetr.setLanguage($('#language').val()).HTMLGreeting('#greeting', true).log()
 })
+
